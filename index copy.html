@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+<title>swissinfo.ch responsive template</title>
+
+<style type="text/css">
+
+/*  #######   rcharts styling ########*/
+svg text {
+/*  font-size: 9px;*/
+  font-family: 'Open Sans', sans-serif;
+}
+
+body, h1, h2, h3, h4, h5, h6, td {
+   font-family: 'Open Sans', sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 2px;
+}
+
+#cite { font-size: 0.9em; text-align: right; margin-top:8px; padding-bottom: 12px; }
+#cite a { text-decoration: none; color: #821122; }
+
+h1 { 
+   font-size:2em; 
+}
+
+h2 { 
+   font-size:1.7em; 
+}
+
+h3 { 
+   font-size:1.3em; 
+}
+
+h4 { 
+   font-size:1.1em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+<h2>rCharts: Highcharts example</h1>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-2.1.1.min.js"></script>
+
+
+
+<script src="js/highcharts.js"></script>
+
+
+<!-- <script src="js/nv.d3.min.js"></script> -->
+
+
+
+
+<!-- ################### Insert code here - from <div> to </script> #############-->
+ 
+     <div id='chart7f82c842a55' class='rChart highcharts'></div>  
+    
+    <script type='text/javascript'>
+    (function($){
+        $(function () {
+            var chart = new Highcharts.Chart({
+ "dom": "chart7f82c842a55",
+"width":            800,
+"height":            400,
+"credits": {
+ "href": null,
+"text": null 
+},
+"exporting": {
+ "enabled": false 
+},
+"title": {
+ "text": null 
+},
+"yAxis": [
+ {
+ "title": {
+ "text": "Pulse" 
+} 
+} 
+],
+"series": [
+ {
+ "data": [
+ [
+         154.94,
+71 
+],
+[
+          156.2,
+80 
+],
+[
+            157,
+74 
+],
+[
+            157,
+74 
+],
+[
+            157,
+89 
+],
+[
+         157.48,
+68 
+],
+[
+         160.02,
+80 
+],
+[
+         162.56,
+60 
+],
+[
+            164,
+64 
+],
+[
+            164,
+64 
+],
+[
+            164,
+84 
+],
+[
+            165,
+48 
+],
+[
+            165,
+80 
+],
+[
+            165,
+92 
+],
+[
+          165.1,
+87 
+],
+[
+          166.4,
+72 
+],
+[
+          166.5,
+60 
+],
+[
+            167,
+70 
+],
+[
+         167.64,
+40 
+],
+[
+         167.64,
+70 
+],
+[
+         167.64,
+72 
+],
+[
+         167.64,
+90 
+],
+[
+            168,
+83 
+],
+[
+          168.5,
+85 
+],
+[
+          169.2,
+60 
+],
+[
+            170,
+64 
+],
+[
+            170,
+68 
+],
+[
+            170,
+70 
+],
+[
+            170,
+75 
+],
+[
+            170,
+104 
+],
+[
+         170.18,
+75 
+],
+[
+         170.18,
+80 
+],
+[
+            172,
+68 
+],
+[
+            172,
+68 
+],
+[
+            172,
+73 
+],
+[
+            172,
+92 
+],
+[
+         172.72,
+65 
+],
+[
+         172.72,
+68 
+],
+[
+         172.72,
+69 
+],
+[
+         172.72,
+76 
+],
+[
+            173,
+62 
+],
+[
+            173,
+76 
+],
+[
+            174,
+48 
+],
+[
+            175,
+72 
+],
+[
+            175,
+76 
+],
+[
+         175.26,
+62 
+],
+[
+         175.26,
+66 
+],
+[
+         175.26,
+68 
+],
+[
+          176.5,
+76 
+],
+[
+            177,
+76 
+],
+[
+            177,
+78 
+],
+[
+          177.8,
+62 
+],
+[
+            178,
+70 
+],
+[
+          178.5,
+66 
+],
+[
+            179,
+56 
+],
+[
+            179,
+60 
+],
+[
+            179,
+65 
+],
+[
+            180,
+59 
+],
+[
+            180,
+64 
+],
+[
+            180,
+78 
+],
+[
+            180,
+84 
+],
+[
+         180.34,
+64 
+],
+[
+         180.34,
+70 
+],
+[
+         180.34,
+72 
+],
+[
+         180.34,
+72 
+],
+[
+            182,
+65 
+],
+[
+          182.5,
+72 
+],
+[
+         182.88,
+72 
+],
+[
+         182.88,
+83 
+],
+[
+            184,
+100 
+],
+[
+            185,
+60 
+],
+[
+            185,
+68 
+],
+[
+            185,
+71 
+],
+[
+            185,
+88 
+],
+[
+         185.42,
+60 
+],
+[
+            187,
+66 
+],
+[
+            187,
+84 
+],
+[
+         187.96,
+64 
+],
+[
+         187.96,
+86 
+],
+[
+            188,
+75 
+],
+[
+            190,
+66 
+],
+[
+            190,
+68 
+],
+[
+            190,
+68 
+],
+[
+          190.5,
+72 
+],
+[
+            195,
+76 
+],
+[
+            196,
+63 
+],
+[
+            200,
+55 
+] 
+],
+"name": "Freq",
+"type": "scatter",
+"marker": {
+ "radius":              3 
+} 
+},
+{
+ "data": [
+ [
+         157.48,
+70 
+],
+[
+            158,
+70 
+],
+[
+            160,
+86 
+],
+[
+            165,
+50 
+],
+[
+            165,
+65 
+],
+[
+            165,
+97 
+],
+[
+            167,
+68 
+],
+[
+            167,
+80 
+],
+[
+            170,
+60 
+],
+[
+            170,
+96 
+],
+[
+            176,
+68 
+],
+[
+          177.8,
+104 
+],
+[
+         180.34,
+68 
+],
+[
+          190.5,
+80 
+] 
+],
+"name": "None",
+"type": "scatter",
+"marker": {
+ "radius":              3 
+} 
+},
+{
+ "data": [
+ [
+            152,
+90 
+],
+[
+          152.4,
+92 
+],
+[
+          153.5,
+76 
+],
+[
+         154.94,
+72 
+],
+[
+            155,
+66 
+],
+[
+            159,
+70 
+],
+[
+            160,
+74 
+],
+[
+            160,
+84 
+],
+[
+            160,
+88 
+],
+[
+         160.02,
+65 
+],
+[
+         160.02,
+72 
+],
+[
+          162.5,
+79 
+],
+[
+         162.56,
+70 
+],
+[
+         162.56,
+70 
+],
+[
+         162.56,
+88 
+],
+[
+            163,
+79 
+],
+[
+            163,
+80 
+],
+[
+            163,
+83 
+],
+[
+            164,
+80 
+],
+[
+            165,
+35 
+],
+[
+            165,
+65 
+],
+[
+            165,
+70 
+],
+[
+            165,
+76 
+],
+[
+            165,
+76 
+],
+[
+            165,
+88 
+],
+[
+          165.1,
+68 
+],
+[
+          165.1,
+85 
+],
+[
+            167,
+61 
+],
+[
+            167,
+76 
+],
+[
+            167,
+79 
+],
+[
+            167,
+90 
+],
+[
+         167.64,
+74 
+],
+[
+            168,
+60 
+],
+[
+            168,
+72 
+],
+[
+            168,
+81 
+],
+[
+          168.9,
+68 
+],
+[
+            169,
+80 
+],
+[
+            170,
+70 
+],
+[
+            170,
+80 
+],
+[
+            170,
+80 
+],
+[
+         170.18,
+78 
+],
+[
+         170.18,
+80 
+],
+[
+            171,
+68 
+],
+[
+            171,
+100 
+],
+[
+            172,
+60 
+],
+[
+         172.72,
+64 
+],
+[
+         172.72,
+90 
+],
+[
+            173,
+92 
+],
+[
+            175,
+72 
+],
+[
+            175,
+84 
+],
+[
+            175,
+90 
+],
+[
+         175.26,
+85 
+],
+[
+          176.5,
+80 
+],
+[
+            178,
+60 
+],
+[
+          179.1,
+80 
+],
+[
+          179.1,
+92 
+],
+[
+            180,
+60 
+],
+[
+            180,
+70 
+],
+[
+            180,
+96 
+],
+[
+         180.34,
+67 
+],
+[
+         182.88,
+74 
+],
+[
+         182.88,
+80 
+],
+[
+            183,
+75 
+],
+[
+            183,
+90 
+],
+[
+            184,
+62 
+],
+[
+            185,
+75 
+],
+[
+            185,
+80 
+],
+[
+            189,
+90 
+],
+[
+          191.8,
+72 
+],
+[
+         193.04,
+83 
+] 
+],
+"name": "Some",
+"type": "scatter",
+"marker": {
+ "radius":              3 
+} 
+} 
+],
+"xAxis": [
+ {
+ "title": {
+ "text": "Height" 
+} 
+} 
+],
+"subtitle": {
+ "text": null 
+},
+"tooltip": {
+ "formatter":  function(){
+  return '<b>haûteur</b>:' + this.x + '<br/>' + 
+    '<b>éèéèweä</b>:' + this.y
+  }  
+},
+"id": "chart7f82c842a55",
+"chart": {
+ "renderTo": "chart7f82c842a55" 
+} 
+});
+        });
+    })(jQuery);
+</script>
+
+
+  
+
+<!-- Source -->
+<div id="cite"> Source: The World Bank | Duc-Quang Nguyen for <a href="http://www.swissinfo.ch" target="_blank">swissinfo.ch</a> </div> 
+
+</a>
+</body>
+
+</html>
+

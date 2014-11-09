@@ -1,0 +1,26 @@
+library(rCharts)
+a <- rCharts::Highcharts$new()
+a$series(
+  list(
+    list(
+      data = list(
+        list(x = 1, y = 1, z = 1, name = "malmo"),
+        list(x = 2, y = 2, z = 2, name = "gothenburg"),
+        list(x = 3, y = 3, z = 3, name = "stockholm")
+      ),
+      name = "sweden"
+    ),
+    list(
+      data = list(
+        list(x = 4, y = 4, z = 4, name = "oslo")
+      ),
+      name = "norway"
+    )
+  )
+)
+a$tooltip(formatter = "#! function() { return this.point.name; } !#")
+a$chart(zoomType = "xy", type = "bubble")
+a$show(cdn = T)
+
+
+a$plotOptions(column = list(dataLabels = list(enabled = T, rotation = -90, align = 'right', color = '#FFFFFF', x = 4, y = 10, style = list(fontSize = '13px', fontFamily = 'Verdana, sans-serif'))))

@@ -1,0 +1,231 @@
+require( rCharts )#
+options(RCHART_TEMPLATE = 'Rickshaw.html')#
+#specify the data#
+data = data.frame(#
+c( 0, 1, 2, 3 ),#
+c( 40, 49, 17, 42 ),#
+stringsAsFactors = FALSE#
+)#
+colnames(data) <- c("x","y")#
+#build the plot#
+r1 <- Rickshaw$new()#
+r1$layer(#
+y ~ x,#
+data = data,#
+type = "area",#
+colors= "steelblue",#
+height = 240,#
+width = 540#
+)#
+#turn off all the nice built in features#
+#to match the sparse first example#
+r1$set(#
+hoverDetail = FALSE,#
+xAxis = FALSE,#
+yAxis = FALSE,#
+shelving = FALSE,#
+legend = FALSE,#
+slider = FALSE,#
+highlight = FALSE#
+)
+data <- read.csv("data/data2.csv", stringsAsFactors = FALSE)#
+#build the plot#
+r2 <- Rickshaw$new()#
+r2$layer(#
+y ~ x,#
+data = data,#
+type = "area",#
+colors= "steelblue",#
+height = 240,#
+width = 540#
+)#
+#turn off all the nice built in features#
+#to match the sparse second example#
+r2$set(#
+hoverDetail = FALSE,#
+xAxis = FALSE,#
+yAxis = FALSE,#
+shelving = FALSE,#
+legend = FALSE,#
+slider = FALSE,#
+highlight = FALSE#
+)
+p1 <- nPlot(mpg ~ wt, group = 'cyl', data = mtcars, type = 'scatterChart')#
+p1$xAxis(axisLabel = 'Weight')#
+p1
+## {title: MultiBar Chart}#
+hair_eye = as.data.frame(HairEyeColor)#
+p2 <- nPlot(Freq ~ Hair, group = 'Eye', data = subset(hair_eye, Sex == "Female"), type = 'multiBarChart')#
+p2$chart(color = c('brown', 'blue', '#594c26', 'green'))#
+p2#
+## {title: MultiBar Horizontal Chart}#
+p3 <- nPlot(~ cyl, group = 'gear', data = mtcars, type = 'multiBarHorizontalChart')#
+p3$chart(showControls = F)#
+p3#
+## {title: Pie Chart}#
+p4 <- nPlot(~ cyl, data = mtcars, type = 'pieChart')#
+p4#
+## {title: Donut Chart}#
+p5 <- nPlot(~ cyl, data = mtcars, type = 'pieChart')#
+p5$chart(donut = TRUE)#
+p5#
+## {title: Line Chart}#
+data(economics, package = 'ggplot2')#
+p6 <- nPlot(uempmed ~ date, data = economics, type = 'lineChart')#
+p6#
+## {title: Line with Focus Chart }#
+ecm <- reshape2::melt(economics[,c('date', 'uempmed', 'psavert')], id = 'date')#
+p7 <- nPlot(value ~ date, group = 'variable', data = ecm, type = 'lineWithFocusChart')#
+#test format dates on the xAxis#
+#also good test of javascript functions as parameters#
+#dates from R to JSON will come over as number of days since 1970-01-01#
+#so convert to milliseconds 86400000 in a day and then format with d3#
+#on lineWithFocusChart type xAxis will also set x2Axis unless it is specified#
+p7$xAxis( tickFormat="#!function(d) {return d3.time.format('%b %Y')(new Date( d * 86400000 ));}!#" )#
+#test xAxis also sets x2Axis#
+p7#
+#now test setting x2Axis to something different#
+#test format dates on the x2Axis#
+#test to show %Y format which is different than xAxis#
+p7$x2Axis( tickFormat="#!function(d) {return d3.time.format('%Y')(new Date( d * 86400000 ));}!#" )#
+p7#
+#test set xAxis again to make sure it does not override set x2Axis#
+p7$xAxis( NULL, replace = T)#
+p7
+require( rCharts )
+?options
+require( rCharts )#
+options(RCHART_TEMPLATE = 'Rickshaw.html')#
+#specify the data#
+data = data.frame(#
+  c( 0, 1, 2, 3 ),#
+  c( 40, 49, 17, 42 ),#
+  stringsAsFactors = FALSE#
+)#
+colnames(data) <- c("x","y")#
+#build the plot#
+r1 <- Rickshaw$new()#
+r1$layer(#
+  y ~ x,#
+  data = data,#
+  type = "area",#
+  colors= "steelblue",#
+  height = 240,#
+  width = 540#
+)#
+#turn off all the nice built in features#
+#to match the sparse first example#
+r1$set(#
+  hoverDetail = FALSE,#
+  xAxis = FALSE,#
+  yAxis = FALSE,#
+  shelving = FALSE,#
+  legend = FALSE,#
+  slider = FALSE,#
+  highlight = FALSE#
+)#
+#r1
+r1
+# Example 2#
+require(rCharts)#
+# options(RCHART_TEMPLATE = 'Rickshaw.html')#
+require(RColorBrewer)#
+data(economics, package = 'ggplot2')#
+datm = reshape2::melt(#
+  economics[,c('date', 'psavert', 'uempmed')],#
+  id = 'date'#
+)#
+datm <- transform(datm, date = to_jsdate(date))#
+p2 <- Rickshaw$new()#
+p2$layer(value ~ date, group = 'variable', data = datm, type = 'line', #
+  colors = c("darkred", "darkslategrey"))
+p2
+to_jsdate <- function(date_){#
+  val = as.POSIXct(as.Date(date_),origin="1970-01-01")#
+  as.numeric(val)#
+}#
+p3 <- Rickshaw$new()#
+p3$layer(Employed ~ Year, data = longley, type = 'line', colors = c('darkred'))#
+#
+usp = reshape2::melt(USPersonalExpenditure)#
+p4 <- Rickshaw$new()#
+p4$layer(value ~ Var2, group = 'Var1', data = usp, type = 'area')#
+p4$show(T)#
+#
+dat <- yaml::yaml.load('[ { x: 0, y: 40 }, { x: 1, y: 49 }, { x: 2, y: 17 }, { x: 3, y: 42 } ]')#
+#
+dat <- data.frame(#
+  x = c(0, 1, 2, 3),#
+  y = c(40, 49, 2, 17)#
+)
+# Example 1#
+p1 <- Rickshaw$new()#
+p1$layer(~ cyl, group = 'am', data = mtcars, type = 'bar')#
+#
+# Example 2#
+require(rCharts)#
+# options(RCHART_TEMPLATE = 'Rickshaw.html')#
+require(RColorBrewer)#
+data(economics, package = 'ggplot2')#
+datm = reshape2::melt(#
+  economics[,c('date', 'psavert', 'uempmed')],#
+  id = 'date'#
+)#
+datm <- transform(datm, date = to_jsdate(date))#
+p2 <- Rickshaw$new()#
+p2$layer(value ~ date, group = 'variable', data = datm, type = 'line', #
+  colors = c("darkred", "darkslategrey"))
+p2
+to_jsdate <- function(date_){#
+  val = as.POSIXct(as.Date(date_),origin="1970-01-01")#
+  as.numeric(val)#
+}#
+p3 <- Rickshaw$new()#
+p3$layer(Employed ~ Year, data = longley, type = 'line', colors = c('darkred'))#
+#
+usp = reshape2::melt(USPersonalExpenditure)#
+p4 <- Rickshaw$new()#
+p4$layer(value ~ Var2, group = 'Var1', data = usp, type = 'area')#
+p4$show(T)
+setwd('/Users/nguyendu/Google Drive/sandbox/www/minimalResponsiveTemplate/rickshaw')
+library(rCharts)#
+#
+usp$date <- as.numeric(as.POSIXct(paste(usp$Var2, '-01-01', sep =""))) * 1000#
+#
+usp2 <- usp#
+usp2[,1] <- paste(usp2[,1], "2")#
+df <- rbind(usp, usp2)#
+#
+h3 <- hPlot(value ~ date, data = df , type = c('area'), group = 'Var1', stacking = "normal")#
+h3$plotOptions(area = list(marker = list(enabled = FALSE)))#
+h3$xAxis(type = 'datetime', dateTimeLabelFormats = list(year = '%Y'))#
+#
+h3$set(tooltip = list(formatter = #
+  "#! function(){#
+  return this.series.name + ' : ' + this.y#
+  } !#"#
+))#
+#
+h3
+setwd('/Users/nguyendu/Google Drive/sandbox/www/minimalResponsiveTemplate/rickshaw')
+library(rCharts)#
+#
+usp = reshape2::melt(USPersonalExpenditure)#
+#
+usp$date <- as.numeric(as.POSIXct(paste(usp$Var2, '-01-01', sep =""))) * 1000#
+#
+usp2 <- usp#
+usp2[,1] <- paste(usp2[,1], "2")#
+df <- rbind(usp, usp2)#
+#
+h3 <- hPlot(value ~ date, data = df , type = c('area'), group = 'Var1', stacking = "normal")#
+h3$plotOptions(area = list(marker = list(enabled = FALSE)))#
+h3$xAxis(type = 'datetime', dateTimeLabelFormats = list(year = '%Y'))#
+#
+h3$set(tooltip = list(formatter = #
+  "#! function(){#
+  return this.series.name + ' : ' + this.y#
+  } !#"#
+))#
+#
+h3

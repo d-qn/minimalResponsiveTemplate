@@ -1,0 +1,107 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    
+    <script src='/Users/nguyendu/Library/R/3.1/library/rCharts/libraries/highcharts/js/jquery-1.9.1.min.js' type='text/javascript'></script>
+    <script src='/Users/nguyendu/Library/R/3.1/library/rCharts/libraries/highcharts/js/highcharts.js' type='text/javascript'></script>
+    <script src='/Users/nguyendu/Library/R/3.1/library/rCharts/libraries/highcharts/js/highcharts-more.js' type='text/javascript'></script>
+    <script src='/Users/nguyendu/Library/R/3.1/library/rCharts/libraries/highcharts/js/exporting.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 800px;
+      height: 400px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chart4a626a706d27' class = 'rChart highcharts'></div>    
+    <script type='text/javascript'>
+    (function($){
+        $(function () {
+            var chart = new Highcharts.Chart({
+ "dom": "chart4a626a706d27",
+"width":            800,
+"height":            400,
+"credits": {
+ "href": null,
+"text": null 
+},
+"exporting": {
+ "enabled": false 
+},
+"title": {
+ "text": null 
+},
+"yAxis": {
+ "title": {
+ "text": null 
+} 
+},
+"series": [
+ {
+ "data": [
+ {
+ "x":              1,
+"y":              1,
+"z":              1,
+"name": "malmo" 
+},
+{
+ "x":              2,
+"y":              2,
+"z":              2,
+"name": "gothenburg" 
+},
+{
+ "x":              3,
+"y":              3,
+"z":              3,
+"name": "stockholm" 
+} 
+],
+"name": "sweden" 
+},
+{
+ "data": [
+ {
+ "x":              4,
+"y":              4,
+"z":              4,
+"name": "oslo" 
+} 
+],
+"name": "norway" 
+} 
+],
+"tooltip": {
+ "formatter":  function() { return this.point.name; }  
+},
+"chart": {
+ "zoomType": "xy",
+"type": "bubble",
+"renderTo": "chart4a626a706d27" 
+},
+"plotOptions": {
+ "bubble": {
+ "dataLabels": {
+ "enabled": true,
+"formatter":  function() { return this.point.name; }  
+} 
+} 
+},
+"id": "chart4a626a706d27" 
+});
+        });
+    })(jQuery);
+</script>
+    
+    <script></script>    
+  </body>
+</html>
