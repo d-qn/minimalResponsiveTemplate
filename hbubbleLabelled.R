@@ -21,7 +21,9 @@ a$series(
 )
 a$tooltip(formatter = "#! function() { return this.point.name; } !#")
 a$chart(zoomType = "xy", type = "bubble")
-a$plotOptions(bubble = list(dataLabels = list(enabled = T, style = list(textShadow = 'none') ,color = '#A9A9A9', formatter = "#! function() { return this.point.name; } !#")))
+a$plotOptions(bubble = list(dataLabels = list(enabled = T, style = list(textShadow = 'none') ,
+	color = '#A9A9A9', formatter = "#! function() { return this.point.name; } !#")))
+a$tooltip(formatter = "#! function() { return this.x + ', ' + this.y; } !#")
 a
 
 a$save("hchart_labelledBubble.html")
